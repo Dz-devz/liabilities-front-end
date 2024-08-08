@@ -18,7 +18,7 @@ export default defineConfig({
     port: 4173,
     proxy: {
       "/api": {
-        target: "https://liabilities-front-end-production.up.railway.app/",
+        target: "https://liabilities-api-production.up.railway.app/",
         changeOrigin: true,
       },
     },
