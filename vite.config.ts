@@ -2,15 +2,15 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import { defineConfig } from "vite";
 
-console.log("Current directory:", __dirname);
-console.log("Resolved server path:", path.resolve(__dirname, "../server"));
+// Utility to resolve paths
+const resolvePath = (p: string) => path.resolve(__dirname, p);
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@server": path.resolve(__dirname, "../server"),
+      "@": resolvePath("./src"),
+      "@server": resolvePath("../server"),
     },
   },
   server: {
